@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: List File
+      - name: List Files
         run: ls -1
+      - name: Create Zip File
+        run: zip python.zip lambda_function.py
+      - name: List Files
+        run: ls -1
+
         
