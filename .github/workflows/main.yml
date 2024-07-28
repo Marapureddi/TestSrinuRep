@@ -14,5 +14,11 @@ jobs:
         run: zip python.zip lambda_function.py
       - name: List Files
         run: ls -1
+      - name: Push it to Lambda
+        run: aws lambda update-function-code --function-name GitHubWebhookTest --zip-file fileb://Python.zip --region us-east-1
+        env: 
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
+          
 
         
